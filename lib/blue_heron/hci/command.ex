@@ -3,7 +3,13 @@ defmodule BlueHeron.HCI.Command do
   @callback serialize_return_parameters(map() | binary()) :: binary()
   @callback deserialize(binary()) :: term()
 
-  alias __MODULE__.{ControllerAndBaseband, LEController, InformationalParameters, LinkPolicy}
+  alias __MODULE__.{
+    ControllerAndBaseband,
+    InformationalParameters,
+    LEController,
+    LinkControl,
+    LinkPolicy
+  }
 
   @modules [
     ControllerAndBaseband.ReadLocalName,
@@ -30,6 +36,9 @@ defmodule BlueHeron.HCI.Command do
     LEController.SetAdvertisingParameters,
     LEController.SetScanEnable,
     LEController.SetScanParameters,
+    LinkControl.AcceptConnectionRequest,
+    LinkControl.IOCapabilityRequestReply,
+    LinkControl.UserConfirmationRequestReply,
     LinkPolicy.WriteDefaultLinkPolicySettings
   ]
 

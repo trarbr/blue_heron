@@ -27,10 +27,16 @@ defmodule BlueHeron.HCI.Event do
   @modules [
     Event.CommandComplete,
     Event.CommandStatus,
+    Event.ConnectionRequest,
     Event.DisconnectionComplete,
     Event.InquiryComplete,
+    Event.IOCapabilityResponse,
+    Event.IOCapabilityRequest,
     Event.LEMeta.AdvertisingReport,
-    Event.LEMeta.ConnectionComplete
+    Event.LEMeta.ConnectionComplete,
+    Event.LinkKeyNotification,
+    Event.SimplePairingComplete,
+    Event.UserConfirmationRequest
   ]
 
   def __modules__(), do: @modules
